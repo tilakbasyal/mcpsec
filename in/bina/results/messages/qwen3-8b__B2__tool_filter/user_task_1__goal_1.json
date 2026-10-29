@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is the current balance of my bank account?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for the current balance of their bank account. Let me check the tools available. There's a function called get_balance that returns the balance in EUR. The parameters for that function are empty, so I don't need any arguments. I just need to call get_balance without any parameters. Let me make sure I'm using the right syntax. The function's JSON definition shows it takes no arguments, so the tool call should be straightforward. I'll generate the tool call with the name \"get_balance\" and an empty arguments object.",
+  "tool_calls": [
+   {
+    "id": "call_ch0mhfmt",
+    "type": "function",
+    "function": {
+     "name": "get_balance",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_ch0mhfmt",
+  "name": "get_balance",
+  "content": "2500.0"
+ },
+ {
+  "role": "assistant",
+  "content": "The current balance of your bank account is **2500.00 EUR**. Let me know if you need further assistance!",
+  "_reasoning": "Okay, the user asked for their current bank account balance. I called the get_balance function, which doesn't require any arguments. The response came back as 2500.0 EUR. Now I need to present this information clearly. Let me check if there's any specific way the user wants the currency format, but since they didn't mention it, the standard EUR format should be fine. I'll state the balance clearly and confirm it's the current amount. No need for extra details unless the user asks for more. Just a straightforward answer should suffice here."
+ }
+]

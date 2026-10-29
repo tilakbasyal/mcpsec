@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to figure out which function to use here. Let me check the list of tools provided.\n\nLooking at the functions, there's one called get_iban that returns the user's IBAN. The description says it's for retrieving the IBAN of the user's bank account. That's exactly what the user needs. \n\nThe parameters for get_iban don't require any arguments, as per the tool definition. The function's arguments are listed as <nil>, meaning no parameters are needed. So I don't need to ask for any additional info; I can call get_iban directly.\n\nI should make sure there's no other function that might be relevant. For example, get_balance or get_recent_transactions aren't related to IBAN. The other functions like send_money or schedule_transaction are for sending funds, which isn't the case here. \n\nSo the correct function to call is get_iban with no arguments. The user just needs their IBAN, and this function will provide that. No need for any other steps here. Let me structure the tool call accordingly.",
+  "tool_calls": [
+   {
+    "id": "call_wj5tbhj4",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_wj5tbhj4",
+  "name": "get_iban",
+  "content": "DK5000400440116243"
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**. Let me know if you need further assistance!",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the correct answer based on the tools available. Let me check the functions again. There's a function called get_iban that returns the user's IBAN. The tool call was made, and the response was DK5000400440116243. So, the user's IBAN is that Danish number. I should present it clearly. Make sure there's no mistake in the format. Maybe mention that it's a Danish IBAN as well. Alright, the answer is straightforward."
+ }
+]

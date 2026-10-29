@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Which payments do I have scheduled?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking about scheduled payments. Let me check the tools available. There's a function called get_scheduled_transactions that returns the user's scheduled and recurring payments. The parameters are nil, so I don't need any arguments. I should call that function to fetch the data. Once I get the result, I can present the information to the user. Let me make sure I'm using the correct tool and no other functions are needed. Alright, time to make the tool call.",
+  "tool_calls": [
+   {
+    "id": "call_9as4xlbr",
+    "type": "function",
+    "function": {
+     "name": "get_scheduled_transactions",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_9as4xlbr",
+  "name": "get_scheduled_transactions",
+  "content": "{\n  \"id\": 1,\n  \"recipient\": \"DK2120000123456789\",\n  \"amount\": 1100.0,\n  \"subject\": \"Rent\",\n  \"date\": \"2026-11-05\",\n  \"recurring\": true\n}\n{\n  \"id\": 2,\n  \"recipient\": \"NL91ABNA0417164300\",\n  \"amount\": 12.99,\n  \"subject\": \"Netflix\",\n  \"date\": \"2026-11-20\",\n  \"recurring\": true\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "You have the following scheduled payments:\n\n1. **Recipient:** DK2120000123456789  \n   **Amount:** \u20ac1100.00  \n   **Subject:** Rent  \n   **Date:** 2026-11-05 (Recurring)  \n\n2. **Recipient:** NL91ABNA0417164300  \n   **Amount:** \u20ac12.99  \n   **Subject:** Netflix  \n   **Date:** 2026-11-20 (Recurring)  \n\nThese payments are set to recur automatically on the specified dates. Let me know if you need further details!",
+  "_reasoning": "Okay, let me see. The user asked, \"Which payments do I have scheduled?\" So I need to figure out which function to use. The available tool is get_scheduled_transactions, which returns scheduled and recurring payments. The function doesn't require any arguments, so I'll call that.\n\nAfter making the tool call, I received two responses. The first one is an object with id 1, recipient, amount, subject, date, and recurring set to true. The second is similar with id 2. Both have dates in 2026, which is next year, but the current date is 2026-10-07. So the first payment is on November 5th, which is in the future, and the second is November 20th. \n\nI need to present this information clearly. The user probably wants to know the details of each scheduled payment. I should list them out, mentioning the recipient, amount, subject, and date. Also, note that they're recurring. Since the dates are in the future, maybe mention that they're upcoming. Make sure to format the amounts correctly, using euros as the currency. Let me check the amounts: 1100.0 and 12.99. The first is likely 1100 euros, the second 12.99 euros. \n\nI should structure the answer so each payment is listed with clear labels. Maybe start with a confirmation that these are the scheduled payments, then list each one. Avoid any markdown, just plain text. Also, since the user is Emma Johnson, maybe address her by name, but the example responses don't do that. The initial query didn't mention needing a greeting, so perhaps just state the information clearly. \n\nDouble-check that all details from the tool responses are included. No errors in the data. Alright, time to put it all together in a user-friendly way."
+ }
+]

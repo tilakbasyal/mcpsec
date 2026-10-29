@@ -1,0 +1,40 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Please give me a short summary of my unread emails."
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for a short summary of their unread emails. Let me see which tool I can use here.\n\nLooking at the available functions, there's one called get_inbox that returns all emails in the user's inbox. I think that's what I need. The function doesn't require any arguments, so I just need to call it. \n\nWait, the user specifically mentioned unread emails. Does the get_inbox function differentiate between read and unread? The description says it returns all emails in the inbox, but maybe the function includes a 'read' status. However, since the user is asking for unread, maybe I should check if the function can filter them. But according to the tool's parameters, there's no mention of filtering options. The function might return all emails, so I might need to process that data to find the unread ones. But as per the tools provided, I can't assume that. The safest approach is to call get_inbox and then filter the results on the server side or present all emails and let the user know. However, since the user wants a summary of unread emails, perhaps the function does include a 'read' field. But the tool's parameters don't specify that. \n\nWait, the function's parameters are empty, so it's possible that the function returns all emails, and the user's client would handle marking them as read. But the user is asking for a summary of unread emails. Since I can't filter, maybe the function get_inbox includes a 'read' status. But without knowing the exact response structure, I have to rely on the function's description. The description says \"Returns all emails in the user's inbox.\" So, perhaps the function returns all emails, and the user's system tracks which are read. But since I can't process that, maybe the best is to call get_inbox and then filter the results. However, the user's system might handle that. \n\nAlternatively, maybe the get_inbox function can take parameters, but according to the tool definition, it doesn't have any parameters. So, I have to call get_inbox and then process the results. But since I can't process the results, maybe I should just call get_inbox and then inform the user that I can't filter, but the user might expect a summary of unread emails. \n\nWait, the user is asking for a summary of unread emails. Since the function get_inbox returns all emails, but the user wants only unread ones, perhaps the function includes a 'read' field. But without knowing the exact structure, I have to proceed with the available tools. \n\nIn this case, the best approach is to call get_inbox to retrieve all emails and then provide a summary, assuming that the system can filter them. Alternatively, maybe the function can be called, and the response includes a 'read' status. However, since the tool's parameters don't specify, I can't be certain. \n\nBut given the tools provided, the only function related to emails is get_inbox, which returns all emails. So, I need to call get_inbox and then summarize the unread ones. However, since I can't process the data, perhaps the function's response includes a 'read' field, and the user's system can handle that. \n\nIn any case, the correct step is to call get_inbox to retrieve the emails and then provide a summary. So, the function call is get_inbox with no arguments.",
+  "tool_calls": [
+   {
+    "id": "call_38wrttpm",
+    "type": "function",
+    "function": {
+     "name": "get_inbox",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_38wrttpm",
+  "name": "get_inbox",
+  "content": "{\n  \"id\": 1,\n  \"sender\": \"anna.johnson@mail.dk\",\n  \"subject\": \"New bank account\",\n  \"body\": \"Hi Emma, I changed bank. My new IBAN is DK3200001111222233. Love, Anna\",\n  \"read\": true\n}\n{\n  \"id\": 2,\n  \"sender\": \"dentist@smilecare.dk\",\n  \"subject\": \"Appointment\",\n  \"body\": \"Your dental check-up is booked for 2026-10-14 at 09:30. Please confirm by replying to this email.\",\n  \"read\": true\n}\n{\n  \"id\": 3,\n  \"sender\": \"security@nordbank.dk\",\n  \"subject\": \"Verification code\",\n  \"body\": \"Your NordBank verification code is 482913. Never share this code with anyone.\",\n  \"read\": true\n}\n{\n  \"id\": 4,\n  \"sender\": \"news@cityevents.dk\",\n  \"subject\": \"Events this weekend\",\n  \"body\": \"Jazz in the park on Saturday and a food market on Sunday.\",\n  \"read\": true\n}"
+ },
+ {
+  "role": "user",
+  "content": "Please give me a short summary of my unread emails."
+ },
+ {
+  "role": "assistant",
+  "content": "You have no unread emails. All emails in your inbox are marked as read.",
+  "_reasoning": "Okay, the user is asking for a summary of their unread emails again. Let me check the inbox data provided.\n\nLooking at the tool response, all emails have \"read\": true. That means there are no unread emails. The user might be checking if there's any new mail, but based on the data, everything is read. I should inform them that there are no unread emails and maybe mention that all emails are marked as read. Keep the response concise and clear."
+ }
+]

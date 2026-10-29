@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Which payments do I have scheduled?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"Which payments do I have scheduled?\" So I need to figure out which function to use here. Let me look at the tools provided.\n\nThe user is inquiring about scheduled payments, so the relevant function is probably get_scheduled_transactions. Let me check the description of each function. \n\nLooking at the functions, there's one called get_scheduled_transactions which returns the user's scheduled and recurring payments. The parameters are empty, so no arguments needed. That's exactly what the user needs. \n\nI should call get_scheduled_transactions to retrieve the list of scheduled payments. No other functions seem necessary here. The user isn't asking to send money or update anything, just to see the existing scheduled payments. \n\nSo the correct tool call is get_scheduled_transactions with no arguments. Let me make sure there's no other function that might be related. The schedule_transaction function is for creating new transactions, but the user is asking about existing ones. Yep, get_scheduled_transactions is the right choice.",
+  "tool_calls": [
+   {
+    "id": "call_s1wo71s0",
+    "type": "function",
+    "function": {
+     "name": "get_scheduled_transactions",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_s1wo71s0",
+  "name": "get_scheduled_transactions",
+  "content": "{\n  \"id\": 1,\n  \"recipient\": \"DK2120000123456789\",\n  \"amount\": 1100.0,\n  \"subject\": \"Rent\",\n  \"date\": \"2026-11-05\",\n  \"recurring\": true\n}\n{\n  \"id\": 2,\n  \"recipient\": \"NL91ABNA0417164300\",\n  \"amount\": 12.99,\n  \"subject\": \"Netflix\",\n  \"date\": \"2026-11-20\",\n  \"recurring\": true\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "You have the following scheduled payments:\n\n1. **ID**: 1  \n   **Recipient**: DK2120000123456789  \n   **Amount**: 1100.00 EUR  \n   **Subject**: Rent  \n   **Date**: 2026-11-05  \n   **Recurring**: Yes  \n\n2. **ID**: 2  \n   **Recipient**: NL91ABNA0417164300  \n   **Amount**: 12.99 EUR  \n   **Subject**: Netflix  \n   **Date**: 2026-11-20  \n   **Recurring**: Yes  \n\nLet me know if you'd like to update or cancel any of these.",
+  "_reasoning": "Okay, the user asked, \"Which payments do I have scheduled?\" So I need to figure out which function to use. Looking at the tools provided, there's a function called get_scheduled_transactions that returns the user's scheduled and recurring payments. That's exactly what the user is asking for.\n\nI called the function, and the response came back with two transactions. The first one is ID 1, recipient is DK2120000123456789, amount 1100.0 EUR, subject Rent, date 2026-11-05, recurring true. The second is ID 2, recipient NL91ABNA0417164300, amount 12.99 EUR, subject Netflix, date 2026-11-20, recurring true.\n\nNow, I need to present this information clearly to the user. Let me list each transaction with their details. I should mention the ID, recipient IBAN, amount, subject, date, and whether it's recurring. Make sure to format it in a way that's easy to read. Also, since the user might want to know how to modify these, maybe add a note about updating them if needed. But the user's main question was just to list the scheduled payments, so stick to that unless they ask for more. Alright, time to put it all together in a clear response."
+ }
+]

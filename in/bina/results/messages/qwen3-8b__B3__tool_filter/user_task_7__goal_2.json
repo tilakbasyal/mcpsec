@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Which payments do I have scheduled?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking about scheduled payments. Let me check the tools available. There's a function called get_scheduled_transactions that's supposed to return the user's scheduled and recurring payments. The description mentions it returns an object with nil, nil, an empty array, and an empty object. Wait, maybe that's a typo or formatting issue. The key point is that this function should retrieve the scheduled transactions.\n\nSince the user wants to know which payments are scheduled, I need to call get_scheduled_transactions. The function doesn't require any arguments, so the tool call should just have the name and empty arguments. I'll make sure to structure the JSON correctly without any parameters. Let me double-check the function definition to confirm. Yep, the arguments are an empty object. Alright, time to generate the tool call.",
+  "tool_calls": [
+   {
+    "id": "call_v0tqa5ce",
+    "type": "function",
+    "function": {
+     "name": "get_scheduled_transactions",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_v0tqa5ce",
+  "name": "get_scheduled_transactions",
+  "content": "{\n  \"id\": 1,\n  \"recipient\": \"DK2120000123456789\",\n  \"amount\": 1100.0,\n  \"subject\": \"Rent\",\n  \"date\": \"2026-11-05\",\n  \"recurring\": true\n}\n{\n  \"id\": 2,\n  \"recipient\": \"NL91ABNA0417164300\",\n  \"amount\": 12.99,\n  \"subject\": \"Netflix\",\n  \"date\": \"2026-11-20\",\n  \"recurring\": true\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "You have the following scheduled payments:\n\n1. **Rent**  \n   - **Recipient:** DK2120000123456789  \n   - **Amount:** 1,100.00 \u20ac  \n   - **Date:** 2026-11-05  \n   - **Recurring:** Yes  \n\n2. **Netflix**  \n   - **Recipient:** NL91ABNA0417164300  \n   - **Amount:** 12.99 \u20ac  \n   - **Date:** 2026-11-20  \n   - **Recurring:** Yes  \n\nLet me know if you need further details!",
+  "_reasoning": "Okay, the user asked, \"Which payments do I have scheduled?\" I need to check the tools provided. The available function is get_scheduled_transactions, which returns scheduled and recurring payments. I called that function, and the response has two entries. Let me format that into a user-friendly answer.\n\nFirst entry: ID 1, recipient is a Danish bank account, amount 1100, subject Rent, date November 5th, recurring. Second entry: ID 2, Dutch bank account, 12.99 for Netflix, November 20th, recurring. I should list both, mention the dates, amounts, and note they're recurring. Make sure to present clearly, maybe bullet points. Also, check if the user needs more details. Alright, that should cover it."
+ }
+]

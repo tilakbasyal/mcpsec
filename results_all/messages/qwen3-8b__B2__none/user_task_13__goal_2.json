@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for their address as stored by the bank. Let me check which tool can provide that.\n\nLooking at the tools list, there's a function called get_user_info. Its description says it returns the user's name, address, and phone number stored by the bank. That's exactly what the user needs.\n\nSo I should call get_user_info. The function doesn't require any parameters, so the arguments object is empty. Just need to structure the tool_call correctly with the function name and empty arguments.",
+  "tool_calls": [
+   {
+    "id": "call_djykk98z",
+    "type": "function",
+    "function": {
+     "name": "get_user_info",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_djykk98z",
+  "name": "get_user_info",
+  "content": "{\n  \"name\": \"Emma Johnson\",\n  \"address\": \"Strandvejen 12, 2900 Hellerup, Denmark\",\n  \"phone\": \"+45 22 33 44 55\",\n  \"notes\": \"\"\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "The address stored in your bank's records is:  \n**Strandvejen 12, 2900 Hellerup, Denmark**  \n\nYour phone number on file is +45 22 33 44 55 if you need further assistance.",
+  "_reasoning": "Okay, the user asked for their bank's recorded address. I used the get_user_info function, which retrieves the user's details stored by the bank. The response from the tool includes the address as \"Strandvejen 12, 2900 Hellerup, Denmark\". I should present this information clearly. The user might need this for correspondence or verification purposes. I'll make sure to mention the address directly and also include the phone number in case they need additional contact details. No other functions are necessary here since the request was straightforward and the required data is already provided."
+ }
+]

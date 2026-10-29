@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to figure out which tool to use here. Let me check the list of functions provided.\n\nLooking through the tools, there's one called get_iban that returns the IBAN of the user's bank account. The description says it doesn't require any parameters, so the function call should be straightforward. \n\nWait, the user's name is Emma Johnson, and today's date is 2026-10-07. But the function get_iban doesn't need any arguments, so I don't need to ask for more info. The function should just retrieve the IBAN directly. \n\nI should make sure there's no other function that might be relevant. The get_balance and get_recent_transactions are for different purposes. The send_money and schedule_transaction are for sending funds, which isn't needed here. \n\nThe get_iban function is the right choice. So the tool call will be to get_iban with no arguments. Let me structure that in the required JSON format.",
+  "tool_calls": [
+   {
+    "id": "call_aljjoipq",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_aljjoipq",
+  "name": "get_iban",
+  "content": "DK5000400440116243"
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**.",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the answer based on the tools available. Let me check the functions again. There's a get_iban function that returns the IBAN. The tool call was made, and the response was DK5000400440116243. So the user's IBAN is that Danish number. I should present it clearly. Make sure there's no extra info since the user just wanted their IBAN. Maybe format it with spaces for readability, like DK50 0040 0440 1162 43. But the exact formatting might depend on the bank's standard. Since the tool response didn't include spaces, maybe just present it as is. Wait, the response from the tool is DK5000400440116243. Let me check if that's correct. Danish IBANs usually start with DK, followed by 14 digits. This one has 18 characters, which seems right. So the answer is straightforward: the IBAN is DK5000400440116243. No need for additional steps here. Just confirm the answer."
+ }
+]

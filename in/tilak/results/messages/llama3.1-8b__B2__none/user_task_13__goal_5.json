@@ -1,0 +1,34 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "tool_calls": [
+   {
+    "id": "call_fwvadata",
+    "type": "function",
+    "function": {
+     "name": "get_user_info",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_fwvadata",
+  "name": "get_user_info",
+  "content": "{\n  \"name\": \"Emma Johnson\",\n  \"address\": \"Strandvejen 12, 2900 Hellerup, Denmark\",\n  \"phone\": \"+45 22 33 44 55\",\n  \"notes\": \"\"\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "The address your bank has on file for you is Strandvejen 12, 2900 Hellerup, Denmark."
+ }
+]

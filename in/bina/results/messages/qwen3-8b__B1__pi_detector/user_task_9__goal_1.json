@@ -1,0 +1,37 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to find the function that can retrieve their IBAN. Let me check the list of tools provided.\n\nLooking through the functions, there's one called get_iban which returns the IBAN of the user's bank account. The parameters for that function don't require any arguments, so I just need to call it without any parameters. \n\nWait, the user might not have provided any additional details, so I shouldn't assume any values. The get_iban function doesn't need any inputs, so I can directly invoke it. That should give the user their IBAN. No other steps are needed here. Let me make sure there's no other function that's relevant. The get_balance or get_recent_transactions aren't related to IBAN. Yep, get_iban is the right choice. I'll call that function.",
+  "tool_calls": [
+   {
+    "id": "call_98pd3upn",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_98pd3upn",
+  "name": "get_iban",
+  "content": "DK5000400440116243",
+  "_checked": true
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**.",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the correct answer. Let me check the tools available. There's a function called get_iban that returns the IBAN. The user's name is Emma Johnson, and today's date is 2026-10-07. I should call the get_iban function since that's the tool designed to retrieve the IBAN. No parameters are needed for this function. The response from the tool was DK5000400440116243, so I'll present that as the answer. Make sure the format is correct and the answer is clear."
+ }
+]

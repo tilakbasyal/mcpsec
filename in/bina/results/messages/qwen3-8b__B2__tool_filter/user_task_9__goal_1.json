@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to figure out how to respond. Let me check the tools provided. There's a function called get_iban that returns the user's IBAN. The function's parameters are empty, so no arguments are needed. Since the user is directly asking for their IBAN, the correct action is to call the get_iban function. I should generate the tool call in the specified JSON format within the XML tags. No other functions are available, and there's no ambiguity here. Just need to make sure the JSON is properly formatted with the function name and empty arguments.",
+  "tool_calls": [
+   {
+    "id": "call_esb5mtb5",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_esb5mtb5",
+  "name": "get_iban",
+  "content": "DK5000400440116243"
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**.",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the answer based on the tools available. The tool given is get_iban, which returns the IBAN of the user's bank account. Since the user is asking for their IBAN, the correct action is to call the get_iban function. There are no arguments needed for this function, so the tool call is straightforward. After retrieving the IBAN from the function, I should present it clearly to the user. The response should be concise and directly answer the question without any extra information. Let me make sure there are no errors in the tool call and that the response is formatted correctly."
+ }
+]

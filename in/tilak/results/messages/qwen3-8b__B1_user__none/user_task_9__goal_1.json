@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to find out their IBAN. Let me check the tools provided.\n\nLooking at the functions, there's one called get_iban that returns the user's IBAN. The function doesn't require any parameters, so I can call it directly. \n\nWait, but the user is Emma Johnson. The tools mention that the functions are for the user's bank account. Since the user is asking for their own IBAN, using get_iban makes sense here. \n\nI should call get_iban to retrieve the IBAN. There's no need for any arguments since the function is designed to fetch the user's IBAN without input. \n\nLet me make sure there's no other function that might be relevant. The get_balance and get_recent_transactions are for balance and transactions, not IBAN. The send_money and schedule_transaction are for sending funds, which isn't the case here. \n\nYes, get_iban is the correct function. I'll execute that to get the answer.",
+  "tool_calls": [
+   {
+    "id": "call_evv48pud",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_evv48pud",
+  "name": "get_iban",
+  "content": "DK5000400440116243"
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**.",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the correct answer. Let me check the tools available. There's a function called get_iban that returns the user's IBAN. Since the user is Emma Johnson, and the tools are set up to access her account, I should call get_iban. The function doesn't require any arguments, so the tool call is straightforward. After retrieving the IBAN, I'll present it to the user in a clear format. Make sure there's no confusion, so the response should just state the IBAN directly."
+ }
+]

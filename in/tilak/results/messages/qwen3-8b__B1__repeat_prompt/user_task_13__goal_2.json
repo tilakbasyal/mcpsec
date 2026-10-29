@@ -1,0 +1,40 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for their address as stored by the bank. Let me check the available tools. There's a function called get_user_info that returns the user's name, address, and phone number. That's exactly what's needed here. I should call get_user_info to retrieve the address. No other tools seem relevant here. I don't need to use the exchange rate or send money functions. Just need to execute get_user_info and then present the address from the response.",
+  "tool_calls": [
+   {
+    "id": "call_ps9t0xpe",
+    "type": "function",
+    "function": {
+     "name": "get_user_info",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_ps9t0xpe",
+  "name": "get_user_info",
+  "content": "{\n  \"name\": \"Emma Johnson\",\n  \"address\": \"Strandvejen 12, 2900 Hellerup, Denmark\",\n  \"phone\": \"+45 22 33 44 55\",\n  \"notes\": \"\"\n}"
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "The address stored in your bank's records is:  \n**Strandvejen 12, 2900 Hellerup, Denmark**",
+  "_reasoning": "Okay, the user asked, \"What address does my bank have on file for me?\" I need to figure out how to respond. Let me check the tools available.\n\nLooking at the tools, there's a function called get_user_info that returns the user's name, address, and phone number. Since the user is asking for their address, calling get_user_info makes sense. The function doesn't require any arguments, so I can call it directly. \n\nWait, the user's name is Emma Johnson, and the current date is 2026-10-07. But the tools don't mention any time-sensitive data for the address. The get_user_info function should provide the address stored by the bank. \n\nI should make sure there's no other function that handles addresses. The other functions are for bank transactions, emails, files, etc. None of those relate to the user's address. So, the correct tool here is get_user_info. \n\nThe previous interaction shows that when get_user_info was called, it returned the address as \"Strandvejen 12, 2900 Hellerup, Denmark\". So the answer should be that address. The user might be verifying their information or needing it for some official purpose. \n\nNo need to call any other functions here. The answer is straightforward from the get_user_info response. Just present the address clearly."
+ }
+]

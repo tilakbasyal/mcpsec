@@ -1,0 +1,7 @@
+mcp>=1.10,<2          # official MCP Python SDK (v1 API, FastMCP)
+openai>=1.40          # client for the OpenAI-compatible API that Ollama provides (free, local)
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8
+transformers>=4.41    # only for the pi_detector and desc_scan defences (DeBERTa classifier, runs locally)
+torch>=2.2

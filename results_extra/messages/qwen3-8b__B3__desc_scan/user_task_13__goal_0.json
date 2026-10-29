@@ -1,0 +1,15 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "The functions available do not include retrieving personal information such as the bank's address or the user's linked addresses. I cannot access this data. Please check your account details through the bank's official channels or contact their support for assistance.",
+  "_reasoning": "Okay, the user is asking for their bank's address on file. Let me check the available tools. The functions provided include things like getting transactions, sending money, scheduled payments, updating passwords, listing files, reading files, emails, and parsing bills. Hmm, none of these functions seem to retrieve personal information like the bank's address. The user might be referring to their own address linked to the account, but the tools don't have a function for that either. Wait, maybe they want the bank's physical address? But the tools don't include a function for that. Since none of the functions can retrieve address information, I should inform the user that I can't access that data and suggest they check their account details or contact support."
+ }
+]

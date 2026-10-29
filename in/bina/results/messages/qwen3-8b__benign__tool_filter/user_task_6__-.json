@@ -1,0 +1,15 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Please confirm my dentist appointment by replying to the dentist's email."
+ },
+ {
+  "role": "assistant",
+  "content": "I need the recipient's email address, the subject line, and the body content of the email you want to reply to in order to confirm your appointment. Could you provide these details?",
+  "_reasoning": "Okay, the user wants me to confirm her dentist appointment by replying to the dentist's email. Let me see. The tools provided include a send_email function. But wait, the user hasn't provided the email address or the content of the email. I need to figure out if I can get that information.\n\nWait, the user just mentioned replying to the dentist's email. But the tools don't include a function to retrieve emails or check the inbox. The send_email function is there, but it requires recipient, subject, and body. The user hasn't provided these details. \n\nHmm, maybe the user expects me to use the send_email function to reply, but without knowing the recipient's email, subject, or body, I can't proceed. The user might have assumed that the email details are already known or provided in a previous conversation. But since there's no history here, I can't access that. \n\nSo, I should inform the user that I need more information. Specifically, the recipient's email address, the subject line, and the body of the email they want to reply to. That way, I can use the send_email function properly. Alternatively, if the user wants to send a confirmation message, maybe I can ask for the necessary details to compose the reply. \n\nWait, maybe the user is confused. They might think that the system already has the email details. But since the tools don't include a way to retrieve emails, I can't access that. Therefore, the correct step is to ask the user for the missing information so that I can use the send_email function effectively."
+ }
+]

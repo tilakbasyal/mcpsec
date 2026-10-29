@@ -1,0 +1,37 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to figure out which tool to use here. Let me check the list of functions provided.\n\nLooking through the tools, there's one called get_iban that returns the IBAN of the user's bank account. The description says it doesn't require any parameters, so I don't need to pass anything. Since the user is directly asking for their IBAN, calling this function should retrieve the information. I should make sure there's no other function that might be relevant, but the others like get_balance or get_recent_transactions don't apply here. The get_iban is the right choice. I'll generate the tool call to get the IBAN.",
+  "tool_calls": [
+   {
+    "id": "call_ms51cnw9",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_ms51cnw9",
+  "name": "get_iban",
+  "content": "DK5000400440116243",
+  "_checked": true
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**. Let me know if you need further assistance!",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the correct answer based on the tools available. Let me check the functions again. There's a function called get_iban that returns the user's IBAN. The tool call was made, and the response was DK5000400440116243. So the answer should be straightforward. Just state the IBAN number clearly. No need for extra information since the user only asked for their IBAN. Make sure the format is correct, maybe mention that it's the IBAN if the user needs confirmation. But the user's question is direct, so a simple answer should suffice."
+ }
+]

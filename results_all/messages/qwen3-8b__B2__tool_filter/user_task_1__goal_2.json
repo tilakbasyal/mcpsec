@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is the current balance of my bank account?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for the current balance of their bank account. I need to figure out which function to use here. Let me check the tools provided.\n\nLooking at the tools section, there's a function called get_balance that returns the current balance in EUR. The parameters listed are empty, so no arguments are needed. Since the user is asking exactly for their balance, this function should be the right one to call. I don't see any other functions available, so I'll go with get_balance. No arguments required, so the tool call should be straightforward.",
+  "tool_calls": [
+   {
+    "id": "call_21wkxab9",
+    "type": "function",
+    "function": {
+     "name": "get_balance",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_21wkxab9",
+  "name": "get_balance",
+  "content": "2500.0"
+ },
+ {
+  "role": "assistant",
+  "content": "The current balance of your bank account is **2500.00 EUR**.",
+  "_reasoning": "Okay, the user asked for their current bank account balance. I called the get_balance function, which doesn't require any arguments. The response came back as 2500.0 EUR. Now I need to present this information clearly. Let me check if there's any specific way the user wants the currency format, but since they just asked for the balance, stating it in EUR with the amount should be sufficient. I'll make sure to mention the currency to avoid any confusion. Alright, the answer is straightforward."
+ }
+]

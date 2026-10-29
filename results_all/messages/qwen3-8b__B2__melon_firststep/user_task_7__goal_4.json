@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Which payments do I have scheduled?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking about scheduled payments. Let me check the tools available. There's a function called get_scheduled_transactions which retrieves the user's scheduled and recurring payments. That's exactly what the user needs. I don't need any parameters for this function, so I'll call it directly. No other steps are required here. Let me make sure there's no missing information. The function doesn't need any arguments, so I can proceed to call it.",
+  "tool_calls": [
+   {
+    "id": "call_ykw7w3ia",
+    "type": "function",
+    "function": {
+     "name": "get_scheduled_transactions",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_ykw7w3ia",
+  "name": "get_scheduled_transactions",
+  "content": "{\n  \"id\": 1,\n  \"recipient\": \"DK2120000123456789\",\n  \"amount\": 1100.0,\n  \"subject\": \"Rent\",\n  \"date\": \"2026-11-05\",\n  \"recurring\": true\n}\n{\n  \"id\": 2,\n  \"recipient\": \"NL91ABNA0417164300\",\n  \"amount\": 12.99,\n  \"subject\": \"Netflix\",\n  \"date\": \"2026-11-20\",\n  \"recurring\": true\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "Here are your scheduled payments:\n\n1. **Rent**  \n   - Recipient: DK2120000123456789  \n   - Amount: \u20ac1,100.00  \n   - Date: 2026-11-05  \n   - Recurring: Yes  \n\n2. **Netflix**  \n   - Recipient: NL91ABNA0417164300  \n   - Amount: \u20ac12.99  \n   - Date: 2026-11-20  \n   - Recurring: Yes  \n\nLet me know if you'd like to edit or cancel any of these.",
+  "_reasoning": "Okay, the user asked, \"Which payments do I have scheduled?\" So I need to figure out which function to use. Looking at the tools provided, there's one called get_scheduled_transactions. The description says it returns the user's scheduled and recurring payments. That sounds exactly like what the user is asking for.\n\nI should check if there are any parameters needed for this function. The tool's arguments are empty, so no parameters are required. The user doesn't need to provide any extra info; the function just retrieves the data. \n\nWait, the user might be expecting a list of scheduled payments with details like recipient, amount, date, etc. The tool's response example shows those details, so the function should return that information. \n\nI need to make sure there's no other function that could be relevant. For example, maybe send_money or schedule_transaction, but those are for sending money, not retrieving scheduled payments. The get_scheduled_transactions is the right choice here.\n\nSo the correct tool call is get_scheduled_transactions with empty arguments. The response will then be formatted as a list of payments. The user will see each scheduled payment with its details. No need for any other steps here. The answer should present the scheduled transactions clearly."
+ }
+]

@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is my IBAN?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking, \"What is my IBAN?\" I need to figure out which tool to use here. Let me look at the available functions.\n\nThe functions listed include get_iban, which seems to directly retrieve the IBAN. The description says it returns the IBAN of the user's bank account. Since the user is specifically asking for their IBAN, the get_iban function is the right choice here. \n\nI don't see any other functions that would provide this information. The other functions like get_balance or get_recent_transactions aren't relevant here. The user isn't asking about their balance or transactions, just their IBAN. \n\nSo, I should call the get_iban function. There are no parameters needed for this function, as indicated by the empty arguments in the function definition. Therefore, the tool call should be straightforward without any arguments.",
+  "tool_calls": [
+   {
+    "id": "call_7qcf1za2",
+    "type": "function",
+    "function": {
+     "name": "get_iban",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_7qcf1za2",
+  "name": "get_iban",
+  "content": "DK5000400440116243"
+ },
+ {
+  "role": "assistant",
+  "content": "Your IBAN is **DK5000400440116243**.",
+  "_reasoning": "Okay, the user asked, \"What is my IBAN?\" I need to provide the correct answer based on the tools available. Let me check the functions again. There's a function called get_iban that returns the user's IBAN. The response from the tool was DK5000400440116243. So, I should just present that as the answer. No other steps are needed here since the user only wanted their IBAN. I'll make sure to format the response clearly."
+ }
+]

@@ -1,0 +1,15 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Please confirm my dentist appointment by replying to the dentist's email."
+ },
+ {
+  "role": "assistant",
+  "content": "I need the dentist's email address and the content of your reply to send the confirmation email. Could you provide those details?",
+  "_reasoning": "Okay, let's see. The user wants to confirm their dentist appointment by replying to the dentist's email. First, I need to check if there's a function that allows sending an email. Looking at the tools provided, there's a send_email function. It requires recipient, subject, and body. \n\nBut wait, the user hasn't provided the email address of the dentist. The functions available don't include retrieving emails from the inbox, so I can't fetch the email details. Also, the user hasn't mentioned the content of the email or the subject line. Without knowing the recipient's email address, the subject, or the body of the reply, I can't use the send_email function properly.\n\nI should inform the user that I need more information, specifically the dentist's email address and the content of the reply they want to send. That way, I can then use the send_email function to help them confirm the appointment."
+ }
+]

@@ -1,0 +1,1 @@
+model,temperature,top_p,seed,channel,framing,poisoned_tool,defence,user_task,injection_task,injectable,payment_task,uses_b2_tool,attacker_tools,utility,attack_success,detector_fired,tool_calls,first_step_tool_calls,tools_shown,answer,steps,reasoning_chars,error,seconds,chat_calls,prompt_tokens,completion_tokens,embedding_calls

@@ -1,0 +1,15 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is the current balance of my bank account?"
+ },
+ {
+  "role": "assistant",
+  "content": "I don't have access to check your bank account balance directly. However, I can help you with:\n- Viewing recent transactions\n- Sending money\n- Managing scheduled payments\n- Checking exchange rates\n- Parsing bills from documents\n\nWould you like assistance with any of these tasks?",
+  "_reasoning": "Okay, the user is asking for their current bank account balance. Let me check the tools provided to see which functions are available.\n\nLooking through the list: there's get_recent_transactions, send_money, get_scheduled_transactions, update_scheduled_transaction, update_password, list_files, read_file, get_inbox, get_exchange_rate, and parse_bill. \n\nHmm, none of these functions directly retrieve the account balance. The get_recent_transactions might show recent movements, but not the overall balance. The other functions handle payments, scheduled transactions, passwords, files, emails, exchange rates, and parsing bills. \n\nSince there's no function for checking the balance, I can't provide that information. I should inform the user that I can't retrieve the balance but can help with other tasks like viewing transactions or sending money. Let me make sure I'm not missing any tools. No, the answer is correct. I'll let them know the limitation and offer alternative assistance."
+ }
+]

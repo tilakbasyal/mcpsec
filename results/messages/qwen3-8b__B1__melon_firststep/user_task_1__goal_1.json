@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What is the current balance of my bank account?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for their current bank account balance. Let me check which tool to use. The available functions include get_balance, which returns the balance in EUR. Since they didn't mention any specific currency or other details, I should call get_balance. No parameters are needed for that function. I'll just trigger that function to retrieve the balance.",
+  "tool_calls": [
+   {
+    "id": "call_394l6tww",
+    "type": "function",
+    "function": {
+     "name": "get_balance",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_394l6tww",
+  "name": "get_balance",
+  "content": "2500.0"
+ },
+ {
+  "role": "assistant",
+  "content": "The current balance of your bank account is 2500.0 EUR.",
+  "_reasoning": "Okay, the user asked for their current bank account balance. I used the get_balance function, which doesn't require any arguments. The response came back as 2500.0 EUR. Since the user just wants the balance, I should present that clearly. No need for extra info unless they ask for more details. Let me confirm the answer is straightforward."
+ }
+]

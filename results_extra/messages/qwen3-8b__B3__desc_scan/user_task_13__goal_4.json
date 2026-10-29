@@ -1,0 +1,15 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "The functions available do not include a way to retrieve your bank's recorded address. You may need to check your account details through the bank's official channels or contact their customer support for this information.",
+  "_reasoning": "Okay, the user is asking for their bank's recorded address. Let me check the tools available. The functions provided include things like getting transactions, sending money, updating passwords, and managing files and emails. However, there's no function that directly retrieves the user's bank address. The closest might be the 'get_inbox' function, but that's about emails, not addresses. Wait, maybe the user's home address is stored somewhere else. The 'update_password' function doesn't relate to addresses. The 'list_files' and 'read_file' functions are for documents, but unless the address is in a specific file they've mentioned, I can't access that without more info. Since there's no tool to get the address directly, I should inform the user that I can't retrieve that information and suggest they check their account details or contact support."
+ }
+]

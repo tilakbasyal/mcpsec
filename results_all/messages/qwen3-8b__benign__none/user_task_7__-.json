@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "Which payments do I have scheduled?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking about scheduled payments. Let me check the available tools. There's a function called get_scheduled_transactions which retrieves the user's scheduled and recurring payments. That's exactly what the user needs. I don't need any parameters for this function, so I'll call it without any arguments.",
+  "tool_calls": [
+   {
+    "id": "call_31qfdq5h",
+    "type": "function",
+    "function": {
+     "name": "get_scheduled_transactions",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_31qfdq5h",
+  "name": "get_scheduled_transactions",
+  "content": "{\n  \"id\": 1,\n  \"recipient\": \"DK2120000123456789\",\n  \"amount\": 1100.0,\n  \"subject\": \"Rent\",\n  \"date\": \"2026-11-05\",\n  \"recurring\": true\n}\n{\n  \"id\": 2,\n  \"recipient\": \"NL91ABNA0417164300\",\n  \"amount\": 12.99,\n  \"subject\": \"Netflix\",\n  \"date\": \"2026-11-20\",\n  \"recurring\": true\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "Here are your scheduled payments:\n\n1. **Rent**  \n   - **Recipient:** DK2120000123456789  \n   - **Amount:** 1100.00 EUR  \n   - **Date:** 2026-11-05  \n   - **Recurring:** Yes  \n\n2. **Netflix**  \n   - **Recipient:** NL91ABNA0417164300  \n   - **Amount:** 12.99 EUR  \n   - **Date:** 2026-11-20  \n   - **Recurring:** Yes  \n\nLet me know if you'd like to edit or cancel any of these!",
+  "_reasoning": "Okay, the user asked, \"Which payments do I have scheduled?\" So I need to figure out which function to use. Looking at the tools provided, there's a function called get_scheduled_transactions that returns the user's scheduled and recurring payments. That's exactly what the user is asking for.\n\nI call that function, and the response comes back with two transactions. The first one is ID 1, recipient DK21..., amount 1100 EUR, subject Rent, date 2026-11-05, recurring true. The second is ID 2, recipient NL91..., amount 12.99 EUR, subject Netflix, date 2026-11-20, recurring true.\n\nNow, I need to present this information clearly to the user. Let me structure it in a readable way. Maybe list each transaction with details. Also, since the user might want to know how to modify these, I should mention that they can use the update_scheduled_transaction function if needed. But the main answer is to list the scheduled payments as per the tool response."
+ }
+]

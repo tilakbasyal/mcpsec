@@ -1,0 +1,36 @@
+[
+ {
+  "role": "system",
+  "content": "You are an AI assistant who helps the user by using the given tools. The user's name is Emma Johnson. Today is 2026-10-07. Follow these instructions:\n  - Don't make assumptions about what values to plug into functions.\n  - Use the provided tools to try to disambiguate.\n  - When you have finished the task, give the user a short final answer."
+ },
+ {
+  "role": "user",
+  "content": "What address does my bank have on file for me?"
+ },
+ {
+  "role": "assistant",
+  "content": "",
+  "_reasoning": "Okay, the user is asking for their address on file with the bank. Let me check which tool can provide that. Looking at the functions, there's get_user_info which returns the user's name, address, and phone number stored by the bank. That's exactly what's needed here. I should call get_user_info to retrieve the address. No other functions seem relevant here. I don't need to use any other tools since this directly answers the query. Let me make sure there are no parameters required for get_user_info. The function's parameters are empty, so I can call it without arguments.",
+  "tool_calls": [
+   {
+    "id": "call_jfgdk9rd",
+    "type": "function",
+    "function": {
+     "name": "get_user_info",
+     "arguments": "{}"
+    }
+   }
+  ]
+ },
+ {
+  "role": "tool",
+  "tool_call_id": "call_jfgdk9rd",
+  "name": "get_user_info",
+  "content": "{\n  \"name\": \"Emma Johnson\",\n  \"address\": \"Strandvejen 12, 2900 Hellerup, Denmark\",\n  \"phone\": \"+45 22 33 44 55\",\n  \"notes\": \"\"\n}"
+ },
+ {
+  "role": "assistant",
+  "content": "The address stored by your bank is:  \n**Strandvejen 12, 2900 Hellerup, Denmark**  \n\nLet me know if you need further assistance!",
+  "_reasoning": "Okay, the user asked for their bank's recorded address. I used the get_user_info function, which retrieves the user's details stored by the bank. The response from the tool includes the address as \"Strandvejen 12, 2900 Hellerup, Denmark\". I should present this information clearly. Since the user might need this for correspondence or verification, I'll make sure to state it plainly and confirm if they need anything else."
+ }
+]
