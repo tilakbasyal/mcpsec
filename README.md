@@ -101,7 +101,7 @@ python -m mcpsec.analyze --results results --out analysis
 planned comparisons; a difference is marked "clear" only when the two intervals do not overlap.
 `analysis/errors.csv`: runs to repeat.
 
-## Things to report in the thesis
+## Important notes
 - Model tags and Ollama version; sampling: Qwen3 temperature 0.6, top-p 0.95, top-k from Ollama's
   default; Llama temperature 0; seed 0 for all runs.
 - MELON is re-implemented and uses the free local embedding model `nomic-embed-text` instead of
